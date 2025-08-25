@@ -1,0 +1,17 @@
+﻿<Window x:Class="ClaimManagementApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Claim Management App" Height="450" Width="800">
+    <DockPanel>
+        <!-- Top Navigation -->
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="LightGray" Height="30" VerticalAlignment="Top">
+            <TextBlock Text="Login" Margin="10,5" Foreground="Blue" Cursor="Hand" MouseDown="NavLogin"/>
+            <TextBlock Text="Lecturer" Margin="10,5" Foreground="Blue" Cursor="Hand" MouseDown="NavLecturer"/>
+            <TextBlock Text="Programme Coordinator" Margin="10,5" Foreground="Blue" Cursor="Hand" MouseDown="NavCoordinator"/>
+            <TextBlock Text="Academic Manager" Margin="10,5" Foreground="Blue" Cursor="Hand" MouseDown="NavManager"/>
+        </StackPanel>
+
+        <!-- Main Content Area -->
+        <ContentControl x:Name="MainContent"/>
+    </DockPanel>
+</Window>

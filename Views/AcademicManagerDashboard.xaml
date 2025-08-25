@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ClaimManagementApp.Views.AcademicManagerDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="800" Height="450">
+    <Grid Margin="10">
+        <StackPanel Margin="10">
+            <!-- Top Navigation -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                <TextBlock Text="Lecturer Dashboard" Foreground="Blue" Cursor="Hand" MouseDown="GoToLecturer" Margin="0,0,10,0"/>
+                <TextBlock Text="Academic Manager" Foreground="Blue" Cursor="Hand" MouseDown="GoToManager" Margin="0,0,10,0"/>
+                <TextBlock Text="Logout" Foreground="Red" Cursor="Hand" MouseDown="GoToLogin"/>
+            </StackPanel>
+
+            <TextBlock Text="Pending Claims" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <!-- Prototype: static list of pending claims -->
+            <ListBox x:Name="lstPendingClaimsManager" Height="220" Margin="0,0,0,10">
+                <ListBoxItem Content="Claim #201 — Lecturer C — R4 000"/>
+                <ListBoxItem Content="Claim #202 — Lecturer D — R2 800"/>
+                <ListBoxItem Content="Claim #203 — Lecturer E — R3 200"/>
+            </ListBox>
+
+            <!-- Prototype actions (no data binding) -->
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Content="Approve" Width="100" Margin="5" Click="ApproveSelected_Click"/>
+                <Button Content="Decline" Width="100" Margin="5" Click="DeclineSelected_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
