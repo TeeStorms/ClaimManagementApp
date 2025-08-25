@@ -1,9 +1,16 @@
-﻿<UserControl x:Class="ClaimManagementApp.Views.LoginPage"
+﻿<!-- Root UserControl for Login Page -->
+<!-- Width: 400, Height: 350 -->
+<!-- x:Class links to LoginPage.xaml.cs -->
+
+<UserControl x:Class="ClaimManagementApp.Views.LoginPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Width="400" Height="350">
 
     <Grid Margin="20">
+
+        <!-- Main Grid layout with 6 auto-sized rows -->
+        <!-- Margin of 20px around the content -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -13,10 +20,11 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Login Title -->
+        <!-- Page title for login -->
         <TextBlock Text="Login" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-        <!-- Form Fields -->
+        <!-- Form fields for username and password input -->
+        <!-- Username uses TextBox, Password uses PasswordBox for security -->
         <StackPanel Grid.Row="1" Margin="0,20,0,0">
             <TextBlock Text="Username" Margin="0,5,0,0" FontWeight="SemiBold"/>
             <TextBox x:Name="txtUsername" Margin="0,5"/>
@@ -25,7 +33,8 @@
             <PasswordBox x:Name="txtPassword" Margin="0,5"/>
         </StackPanel>
 
-        <!-- Role Selection -->
+        <!-- Dropdown for selecting user role -->
+        <!-- ComboBox contains static roles for Phase 1 -->
         <StackPanel Grid.Row="2" Margin="0,10,0,0">
             <TextBlock Text="Select Role" FontWeight="SemiBold" Margin="0,0,0,5"/>
             <ComboBox x:Name="cmbRole">
@@ -35,14 +44,15 @@
             </ComboBox>
         </StackPanel>
 
-        <!-- Login Button -->
+        <!-- Login button triggers Login_Click event -->
+        <!-- IsEnabled bound to CanLogin for validation -->
         <Button Grid.Row="3" Content="Login" Width="100" HorizontalAlignment="Center" Margin="0,10" Click="Login_Click"
                 ToolTip="Click to login" IsEnabled="{Binding CanLogin}"/>
 
-        <!-- Error Message -->
+        <!-- TextBlock to display login error messages in red -->
         <TextBlock x:Name="txtError" Foreground="Red" Grid.Row="4" HorizontalAlignment="Center"/>
 
-        <!-- Forgot Password Link -->
+        <!-- Clickable "Forgot Password?" link triggers ForgotPassword_Click -->
         <TextBlock Text="Forgot Password?" 
                    Grid.Row="5"
                    HorizontalAlignment="Center"

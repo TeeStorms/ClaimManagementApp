@@ -1,17 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
+using System.Windows.Input;                         // Import WPF namespaces for controls and mouse events
 
 namespace ClaimManagementApp.Views
 {
     public partial class ProgrammeCoordinatorDashboard : UserControl
-    {
+    {                                                                           // Code-behind for ProgrammeCoordinatorDashboard.xaml
+                                                                                // Handles navigation and prototype claim actions
         public ProgrammeCoordinatorDashboard()
         {
+            // Constructor initializes the dashboard and connects XAML elements
             InitializeComponent();
         }
 
-        // Navigate to Lecturer dashboard
+        // Navigate to Lecturer Dashboard when clicked
         private void GoToLecturer(object sender, MouseButtonEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
@@ -19,7 +21,7 @@ namespace ClaimManagementApp.Views
                 mainWindow.MainContent.Content = new LecturerDashboard();
         }
 
-        // Navigate to Academic Manager dashboard
+        // Navigate to Academic Manager Dashboard when clicked
         private void GoToManager(object sender, MouseButtonEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
@@ -27,7 +29,7 @@ namespace ClaimManagementApp.Views
                 mainWindow.MainContent.Content = new AcademicManagerDashboard();
         }
 
-        // Navigate to Login
+        // Navigate to Login page when Logout is clicked
         private void GoToLogin(object sender, MouseButtonEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
@@ -35,7 +37,8 @@ namespace ClaimManagementApp.Views
                 mainWindow.MainContent.Content = new LoginPage();
         }
 
-        // Prototype: Approve selected claim (no real data updates)
+        // Approve selected claim (Phase 1 prototype only)
+        // Shows a confirmation MessageBox
         private void ApproveSelected_Click(object sender, RoutedEventArgs e)
         {
             var selected = lstPendingClaimsCoordinator?.SelectedItem as ListBoxItem;
@@ -43,7 +46,8 @@ namespace ClaimManagementApp.Views
             MessageBox.Show($"✅ Approved {label}");
         }
 
-        // Prototype: Decline selected claim (no feedback field in Phase 1)
+        // Decline selected claim (Phase 1 prototype only)
+        // Shows a confirmation MessageBox
         private void DeclineSelected_Click(object sender, RoutedEventArgs e)
         {
             var selected = lstPendingClaimsCoordinator?.SelectedItem as ListBoxItem;

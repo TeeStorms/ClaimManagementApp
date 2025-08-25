@@ -21,14 +21,17 @@
                 <TextBlock Text="Logout" Foreground="Red" Cursor="Hand" MouseDown="GoToLogin"/>
             </StackPanel>
 
-            <!-- Page Header -->
+            <!-- Page header showing "Lecturer Dashboard" -->
             <TextBlock Text="Lecturer Dashboard" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
 
-            <!-- Lecturer Actions -->
+            <!-- Buttons for lecturer actions -->
+            <!-- Submit New Claim and Upload Document -->
+            <!-- Click events handled in code-behind -->
             <Button Content="Submit New Claim" Width="180" Margin="0,0,0,10" Click="SubmitClaim_Click"/>
             <Button Content="Upload Document" Width="180" Margin="0,0,0,10" Click="UploadDocument_Click"/>
 
-            <!-- Dummy claim status tracker -->
+            <!-- Section for tracking claim statuses -->
+            <!-- ListBox shows static claims (prototype), will be bound to dynamic data later -->
             <TextBlock Text="Claim Status Tracker" FontWeight="Bold" FontSize="16" Margin="0,20,0,10"/>
             <ListBox x:Name="lstClaimStatus" Width="350" Height="120" Margin="0,0,0,10">
                 <ListBoxItem Content="Claim #123 — Submitted"/>
