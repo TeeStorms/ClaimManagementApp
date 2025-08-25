@@ -40,7 +40,7 @@ namespace ClaimManagementApp.Views
         {
             var selected = lstPendingClaimsCoordinator?.SelectedItem as ListBoxItem;
             var label = selected?.Content?.ToString() ?? "(no claim selected)";
-            MessageBox.Show($"✅ Prototype: Approved {label}");
+            MessageBox.Show($"✅ Approved {label}");
         }
 
         // Prototype: Decline selected claim (no feedback field in Phase 1)
@@ -48,7 +48,7 @@ namespace ClaimManagementApp.Views
         {
             var selected = lstPendingClaimsCoordinator?.SelectedItem as ListBoxItem;
             var label = selected?.Content?.ToString() ?? "(no claim selected)";
-            MessageBox.Show($"❌ Prototype: Declined {label}");
+            MessageBox.Show($"❌ Declined {label}");
         }
     }
 }

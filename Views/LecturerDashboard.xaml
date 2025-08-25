@@ -1,10 +1,20 @@
-﻿<UserControl x:Class="ClaimManagementApp.Views.LecturerDashboard"
+﻿<!-- Root UserControl for Lecturer Dashboard -->
+<!-- Width set to: 800, Height: 450 -->
+<!-- x:Class links to LecturerDashboard.xaml.cs -->
+
+<UserControl x:Class="ClaimManagementApp.Views.LecturerDashboard"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Width="800" Height="450">
+   
+    <!-- Main Grid container has a 10px margin -->
     <Grid Margin="10">
-        <StackPanel Margin="10">
-            <!-- Top Navigation -->
+
+        <!-- StackPanel to arrange dashboard components vertically -->
+        <StackPanel Margin="10">   
+            
+            <!-- Top navigation links aligned to the right -->
+            <!-- Each TextBlock navigates to different dashboard pages or Logout -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
                 <TextBlock Text="Programme Coordinator" Foreground="Blue" Cursor="Hand" MouseDown="GoToCoordinator" Margin="0,0,10,0"/>
                 <TextBlock Text="Academic Manager" Foreground="Blue" Cursor="Hand" MouseDown="GoToManager" Margin="0,0,10,0"/>

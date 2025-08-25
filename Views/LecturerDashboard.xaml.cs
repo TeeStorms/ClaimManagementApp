@@ -42,7 +42,7 @@ namespace ClaimManagementApp.Views
         private void SubmitClaim_Click(object sender, RoutedEventArgs e)
         {
             // Show a simple form as a MessageBox (Phase 1 only)
-            MessageBox.Show("📄 Prototype form:\n\nTitle: ___________\nDetails: ___________\n\n✅ In Phase 2 this will be a real form.");
+            MessageBox.Show("📄 Form:\n\nTitle: ___________\nDetails: ___________\n\n In Phase 2 this will be a real form.");
         }
 
         // Lecturer uploads a supporting document
@@ -54,7 +54,7 @@ namespace ClaimManagementApp.Views
 
             if (openFileDialog.ShowDialog() == true)
             {
-                MessageBox.Show($"📎 Prototype: Selected file:\n{openFileDialog.FileName}");
+                MessageBox.Show($"📎Selected file:\n{openFileDialog.FileName}");
             }
         }
     }
